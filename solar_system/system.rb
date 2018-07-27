@@ -4,7 +4,12 @@ class System
   end
 
   def add(body)
-    @bodies << body
+    # add to bodies array only if it doesn't exists
+    @bodies << body if !@bodies.include?(body)
+  end
+
+  def all
+    @bodies
   end
 
   def total_mass
